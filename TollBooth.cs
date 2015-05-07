@@ -12,7 +12,7 @@ namespace TollBooth
         {
             get
             {
-                return "Adds the ability for toolbooth assets to collect money.";
+                return "Adds the ability for toll booth assets to collect money.";
             }
         }
 
