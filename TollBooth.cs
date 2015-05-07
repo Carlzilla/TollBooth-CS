@@ -54,5 +54,21 @@ namespace TollBooth
         int mFees = Convert.ToInt32(Math.Floor(this.vehicleManager.m_vehicleCount * 0.2 * m_tollRate * -1));
         return mFees;
     }
+    
+    public override void GetImmaterialResourceRadius(ushort buildingID, ref Building data, out ImmaterialResourceManager.Resource resource1, out float radius1, out ImmaterialResourceManager.Resource resource2, out float radius2)
+    {
+        if (this.m_entertainmentAccumulation == 0)
+        {
+            resource1 = ImmaterialResourceManager.Resource.None;
+            radius1 = 0f;
+        }
+        else
+        {
+            resource1 = ImmaterialResourceManager.Resource.Entertainment;
+            radius1 = this.m_entertainmentRadius;
+        }
+        resource2 = ImmaterialResourceManager.Resource.None;
+        radius2 = 0f;
+    }
   }
 }
